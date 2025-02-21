@@ -44,6 +44,10 @@ $highlight-color: #41F6D7;
   display: none;
 }
 
+.hiddenaboutIpad {
+  display: none;
+}
+
 .service-card {
   display: none;
 }
@@ -122,11 +126,14 @@ body {
     margin: 0;
     overflow-x: hidden;
     width: 100%;
+
 }
 
 .container {
     display: flex;
     flex-direction: row;
+   background-color: #f5f5f5;
+
 }
 
 .container-header {
@@ -143,7 +150,7 @@ body {
 
 .content {
   //  flex: 1;
-    background-color: #f5f5f5;
+
     padding: 20px;
     flex-grow: 1;
     overflow-x: hidden;
@@ -163,7 +170,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 750px;
+}
+
+.sidebars {
+  height: 1500px;
 }
 
 .sidebar__header {
@@ -219,7 +229,7 @@ body {
 }
 
 .sidebar__footer {
-    margin-top: auto;
+    margin-top: 200px;
     padding: 20px;
 }
 
@@ -367,7 +377,9 @@ body {
     height: 40px;
 }
 
-
+.hiddenabout {
+  display: none;
+}
 
 .about {
     flex-grow: 1; 
@@ -581,7 +593,8 @@ h3 {
   align-items: center;
   padding: 15px;
   background: #fff;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
   border-radius: 8px;
 }
 
@@ -606,13 +619,14 @@ h3 {
   width: 421px;
   font-size: 12px;
   color: #1B1C21;
-  margin-left: 20px;
+ text-align: center;
 }
 
 .order-text_dark {
   width: 292px;
   font-size: 14px;
   color: #1B1C21;
+  text-align: center;
 }
 
 .footer-banner {
@@ -715,6 +729,10 @@ h3 {
       }
   }
   
+.hiddenaboutIpad {
+  display: none;
+}
+
 .gic-ipad {
   width: 3px;
   height: 40px;
@@ -793,7 +811,7 @@ h3 {
   margin-right: 20px;
 }
 
-.read-more__ipad {
+.read-moreipad {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1051,7 +1069,7 @@ transform: rotate(180deg);
 .sidebar-modal {
   flex: 0 0 350px;
   background-color: white;
-  box-shadow: 0px 0 0px rgba(145, 142, 142, 0.3);
+  box-shadow: 5px 0 20px rgba(10, 10, 10, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1073,6 +1091,9 @@ transform: rotate(180deg);
 .sidebar__header-modal {
   padding: 20px;
 }
+
+
+
 
 .sidebar__icons-modal {
   display: flex;
@@ -1283,6 +1304,13 @@ input[type="tel"] {
   color: #1B1C21;
 }
 
+@media (max-width: 440px) {
+  .order-call {
+    left: -100%;  
+    visibility: hidden; 
+  }
+}
+
 // chat
 
 .chat {
@@ -1301,6 +1329,18 @@ input[type="tel"] {
   justify-content: space-between;
 }
 
+.chat.chat--active {
+  left: 0;
+}
+
+
+@media (max-width: 440px) {
+  .chat {
+    left: -100%;  
+    visibility: hidden; 
+  }
+}
+
 
 
 .chat-gic {
@@ -1316,9 +1356,6 @@ input[type="tel"] {
   color: #1B1C21;
 }
 
-.chat.chat--active {
-  left: 0;
-}
 
 .chat-head {
   display: flex;

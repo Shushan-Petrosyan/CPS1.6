@@ -1,3 +1,44 @@
+// read more desktop
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("button-more");
+  const extraText = document.getElementById("extra-text");
+  const buttonText = document.getElementById("read-text");
+
+  button.addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    if (extraText.classList.contains("hiddenabout")) {
+      extraText.classList.remove("hiddenabout");
+      buttonText.textContent = "Скрыть";
+    } else {
+      extraText.classList.add("hiddenabout");
+      buttonText.textContent = "Читать далее";
+    }
+  });
+});
+
+// read more ipad
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonIpad = document.getElementById("button-moreipad");
+  const extraTextIpad = document.getElementById("extra-textIpad");
+  const buttonTextIpad = document.getElementById("button-textipad");
+
+  buttonIpad.addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    if (extraTextIpad.classList.contains("hiddenaboutIpad")) {
+      extraTextIpad.classList.remove("hiddenaboutIpad");
+      buttonTextIpad.textContent = "Скрыть";
+    } else {
+      extraTextIpad.classList.add("hiddenaboutIpad");
+      buttonTextIpad.textContent = "Читать далее";
+    }
+  });
+});
+
+
 
 const toggleButton = document.getElementById('toggle-button');
 const toggleIcon = document.getElementById('toggle-icon');
