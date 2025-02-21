@@ -1640,7 +1640,22 @@ input[type="email"] {
         margin-left: 20px;
       }
       
-  
+  .hiddenaboutMobile {
+    display: none;
+  }
+
+
+      .read-moreMobile{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $primary-color;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+        margin-left: 20px;
+      }
+
       
       .mobile_gic {
         width: 100%;
@@ -1653,6 +1668,15 @@ input[type="email"] {
       display: block;
     }
 
+    .swiper-horizontal  .swiper-pagination-bullets .swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-custom, .swiper-pagination-fraction {
+      bottom: var(--swiper-pagination-bottom,8px);
+      top: var(--swiper-pagination-top,auto);
+      left: 0;
+      width: 100%;
+      top: 20px !important; 
+    }
+
+   
     .title {
       font-family: "Old Standard TT", serif;
       font-size: 16px;
@@ -1705,11 +1729,14 @@ input[type="email"] {
     }
     
     .swiper-pagination {
-      position: absolute;
-      bottom: 10px;
+      position: static !important;
       width: 100%;
       text-align: center;
+      margin-top: 20px;
   }
+
+
+
   .image-slider__remont {
     position: relative;
     padding-bottom: 30px; 
@@ -1729,7 +1756,7 @@ input[type="email"] {
   
     
     .image-slider .swiper-pagination-bullet {
-      background: #ccc;
+
       opacity: 0.7;
     }
     .image-slider .swiper-pagination-bullet :active {

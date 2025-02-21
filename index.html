@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dist/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.scss">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
@@ -457,11 +458,17 @@
     <div class="content-mobile__text">
         <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
         <p>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера.</p>
+
+
+        <p id="extra-textMobile" class="hiddenaboutMobile">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel ipsum nobis repudiandae.
+        </p>
+    
+        <a href="#" class="read-moreMobile" id="button-moreMobile">
+          <img id="button-iconMobile" src="assets/icons/expand.png" alt="Arrow icon">
+          <span class="button-textMobile" id="button-textMobile">Читать далее</span>
+        </a>
     </div>
-    <a href="#" class="read-more__mobile" id="button-more__mobile">
-      <img id="button-icon__mobile" src="assets/icons/expand.png" alt="Arrow icon">
-      <span class="button-text__mobile" id="read-text__mobile">Читать далее</span>
-    </a>
   
     <div class="content-mobile__section">
         <img src="assets/img/image.png" alt="CPS Office">
@@ -674,8 +681,8 @@
 
   <div class="sidebar__footer-modal">
     <div class="footer__icons-modal">
-      <img src="assets/icons/call.svg" alt="Call">
-      <img src="assets/icons/chat.svg" alt="Chat">
+      <a href="#" id="callIconModal"><img src="assets/icons/call.svg" alt="call"></a>
+      <a href="#" id="chatIconModal"><img src="assets/icons/chat.svg" alt="chat"></a>
       <img src="assets/icons/profile.svg" alt="Profile">
     </div>
 
@@ -691,6 +698,7 @@
     </div>
     
   </div>
+
 </aside>
 
 <!--Заказать звонок-->

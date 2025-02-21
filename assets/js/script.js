@@ -38,6 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// read more phone
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonMobile = document.getElementById("button-moreMobile");
+  const extraTextMobile = document.getElementById("extra-textMobile");
+  const buttonTextMobile = document.getElementById("button-textMobile");
+
+  buttonMobile.addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    if (extraTextMobile.classList.contains("hiddenaboutMobile")) {
+      extraTextMobile.classList.remove("hiddenaboutMobile");
+      buttonTextMobile.textContent = "Скрыть";
+    } else {
+      extraTextMobile.classList.add("hiddenaboutMobile");
+      buttonTextMobile.textContent = "Читать далее";
+    }
+  });
+});
+
 
 
 const toggleButton = document.getElementById('toggle-button');
@@ -130,27 +150,22 @@ remontButtonIpad.addEventListener('click', () => {
 });
 
 new Swiper('.image-slider', {
-
+  slidesPerView: 'auto', 
+  spaceBetween: 20, 
+  loop: true, 
   pagination: {
-   el: '.swiper-pagination',
-   clickable: true,
- 
+     el: '.swiper-pagination',
+     clickable: true,
   },
- 
-  autoHeight: true,
-
-
- 
-});
+})
 new Swiper('.image-slider__remont', {
-
+  slidesPerView: 'auto', 
+  spaceBetween: 20, 
+  loop: true, 
   pagination: {
-   el: '.swiper-pagination',
-   clickable: true,
- 
+     el: '.swiper-pagination',
+     clickable: true,
   },
- 
-  autoHeight: true,
 
 
 });
@@ -205,76 +220,78 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-// call
-
 document.addEventListener("DOMContentLoaded", function () {
+
   const callIcon = document.querySelector("#callIcon");
+  const callIconModal = document.querySelector("#callIconModal");
   const orderCall = document.querySelector(".order-call");
-  const rejectIcon = document.querySelector(".call-close"); 
+  const rejectIcon = document.querySelector(".call-close");
+  const sendButton = document.querySelector(".order-call__send");
 
-  if (!callIcon || !orderCall || !rejectIcon) {
-    console.error("Ошибка: Один из элементов не найден!");
-    return;
-  }
+  if (orderCall && rejectIcon) {
+    function toggleCall() {
+      orderCall.classList.toggle("order-call--active");
+    }
 
-
-  callIcon.addEventListener("click", (event) => {
-    event.preventDefault();
-    orderCall.classList.toggle("order-call--active"); 
-  });
-
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".order-call") && !event.target.closest("#callIcon")) {
+    function closeCall() {
       orderCall.classList.remove("order-call--active");
     }
-  });
 
+    if (callIcon) callIcon.addEventListener("click", toggleCall);
+    if (callIconModal) callIconModal.addEventListener("click", toggleCall);
+    rejectIcon.addEventListener("click", closeCall);
+    sendButton.addEventListener("click", () => {
+      console.log("Данные отправлены!");
+      closeCall();
+    });
 
-  rejectIcon.addEventListener("click", () => {
-    orderCall.classList.remove("order-call--active");
-  });
-});
-
-
-//chat
-
-document.addEventListener("DOMContentLoaded", function () {
-  const chatIcon = document.querySelector("#chatIcon");
-  const chat = document.querySelector(".chat");
-  const chatClose = document.querySelector(".chat-close"); // Кнопка закрытия
-
-  if (!chatIcon || !chat || !chatClose) {
-    console.error("Ошибка: Один из элементов не найден!");
-    return;
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".order-call") && 
+          !event.target.closest("#callIcon") && 
+          !event.target.closest("#callIconModal")) {
+        closeCall();
+      }
+    });
+  } else {
+    console.error("Ошибка: Не найдены элементы для Call!");
   }
 
-  chatIcon.addEventListener("click", (event) => {
-    event.preventDefault();
-    chat.classList.toggle("chat--active"); 
-  });
+  //call chat call-phone chat-phone
 
+  const chatIcon = document.querySelector("#chatIcon");
+  const chatIconModal = document.querySelector("#chatIconModal");
+  const chatWindow = document.querySelector(".chat");
+  const chatCloseIcon = document.querySelector(".chat-close");
+  const chatSendButton = document.querySelector(".chat-send");
 
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".chat") && !event.target.closest("#chatIcon")) {
-      chat.classList.remove("chat--active");
+  if (chatWindow && chatCloseIcon) {
+    function toggleChat() {
+      chatWindow.classList.toggle("chat--active");
     }
-  });
 
+    function closeChat() {
+      chatWindow.classList.remove("chat--active");
+    }
 
-  chatClose.addEventListener("click", () => {
-    chat.classList.remove("chat--active");
-  });
+    if (chatIcon) chatIcon.addEventListener("click", toggleChat);
+    if (chatIconModal) chatIconModal.addEventListener("click", toggleChat);
+    chatCloseIcon.addEventListener("click", closeChat);
+    chatSendButton.addEventListener("click", () => {
+      console.log("Сообщение отправлено!");
+      closeChat();
+    });
 
-  chat.addEventListener("click", (event) => {
-    event.stopPropagation();
-  });
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".chat") &&
+          !event.target.closest("#chatIcon") &&
+          !event.target.closest("#chatIconModal")) {
+        closeChat();
+      }
+    });
+  } else {
+    console.error("Ошибка: Не найдены элементы для Chat!");
+  }
 });
-
-
-
 
 
 
