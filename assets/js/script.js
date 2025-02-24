@@ -1,163 +1,77 @@
-// read more desktop
-
-document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("button-more");
-  const extraText = document.getElementById("extra-text");
-  const buttonText = document.getElementById("read-text");
-
-  button.addEventListener("click", function (event) {
-    event.preventDefault(); 
-
-    if (extraText.classList.contains("hiddenabout")) {
-      extraText.classList.remove("hiddenabout");
-      buttonText.textContent = "Скрыть";
-    } else {
-      extraText.classList.add("hiddenabout");
-      buttonText.textContent = "Читать далее";
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.querySelector(".read-more");
+    const extraText = document.querySelector(".extra-text");
+    
+    button.addEventListener("click", () => {
+        extraText.classList.toggle("hidden");
+        button.classList.toggle("active");
+        button.querySelector(".button-text").textContent = 
+            extraText.classList.contains("hidden") ? "Читать далее" : "Скрыть";
+    });
 });
 
-// read more ipad
+// show more lenovo
 
-document.addEventListener("DOMContentLoaded", function () {
-  const buttonIpad = document.getElementById("button-moreipad");
-  const extraTextIpad = document.getElementById("extra-textIpad");
-  const buttonTextIpad = document.getElementById("button-textipad");
+const showMoreButton = document.querySelector('.show-more'); 
+const showMoreIcon = document.querySelector('.show-more__icon');
+const showMoreText = document.querySelector('.show-more__text');
+const hiddenImages = document.querySelectorAll('.hidden-slider');
 
-  buttonIpad.addEventListener("click", function (event) {
-    event.preventDefault(); 
-
-    if (extraTextIpad.classList.contains("hiddenaboutIpad")) {
-      extraTextIpad.classList.remove("hiddenaboutIpad");
-      buttonTextIpad.textContent = "Скрыть";
-    } else {
-      extraTextIpad.classList.add("hiddenaboutIpad");
-      buttonTextIpad.textContent = "Читать далее";
-    }
-  });
-});
-
-// read more phone
-
-document.addEventListener("DOMContentLoaded", function () {
-  const buttonMobile = document.getElementById("button-moreMobile");
-  const extraTextMobile = document.getElementById("extra-textMobile");
-  const buttonTextMobile = document.getElementById("button-textMobile");
-
-  buttonMobile.addEventListener("click", function (event) {
-    event.preventDefault(); 
-
-    if (extraTextMobile.classList.contains("hiddenaboutMobile")) {
-      extraTextMobile.classList.remove("hiddenaboutMobile");
-      buttonTextMobile.textContent = "Скрыть";
-    } else {
-      extraTextMobile.classList.add("hiddenaboutMobile");
-      buttonTextMobile.textContent = "Читать далее";
-    }
-  });
-});
-
-
-
-const toggleButton = document.getElementById('toggle-button');
-const toggleIcon = document.getElementById('toggle-icon');
-const toggleText = document.getElementById('toggle-text');
-const hiddenImages = document.querySelectorAll('.hidden');
-
-toggleButton.addEventListener('click', () => {
+showMoreButton.addEventListener('click', () => {
   hiddenImages.forEach(image => {
-    image.classList.toggle('hidden');
+    image.classList.toggle('hidden-slider');
   });
 
-  const isHidden = Array.from(hiddenImages).some(image => image.classList.contains('hidden'));
+  const isHidden = Array.from(hiddenImages).some(image => image.classList.contains('hidden-slider'));
 
   if (isHidden) {
-    toggleText.textContent = 'Показать все';
-    toggleIcon.classList.remove('rotated');
+    showMoreText.textContent = 'Показать все';
+    showMoreIcon.classList.remove('rotated');
   } else {
-    toggleText.textContent = 'Скрыть';
-    toggleIcon.classList.add('rotated');
+    showMoreText.textContent = 'Скрыть';
+    showMoreIcon.classList.add('rotated');
   }
 });
 
-// remont
+// show more notes
 
-const remontButton = document.getElementById('remont-button');
-const remontIcon = document.getElementById('remont-icon');
-const remontText = document.getElementById('remont-text');
-const remontImages = document.querySelectorAll('.remont-hidden');
+const showMoreNoteButton = document.querySelector('.show-more-note'); 
+const showMoreNoteIcon = document.querySelector('.show-more-note_icon');
+const showMoreNoteText = document.querySelector('.show-more-note_text');
+const hiddenNoteImages = document.querySelectorAll('.slider-note__hidden');
 
-remontButton.addEventListener('click', () => {
-  remontImages.forEach(image => {
-    image.classList.toggle('remont-hidden');
+showMoreNoteButton.addEventListener('click', () => {
+    hiddenNoteImages.forEach(image => {
+    image.classList.toggle('slider-note__hidden');
   });
 
-  const remontHidden = Array.from(remontImages).some(image => image.classList.contains('remont-hidden'));
+  const isHiddenNote = Array.from(hiddenNoteImages).some(image => image.classList.contains('slider-note__hidden'));
 
-  if (remontHidden) {
-    remontText.textContent = 'Показать все';
-    remontIcon.classList.remove('rotated');
+  if (isHiddenNote) {
+    showMoreNoteText.textContent = 'Показать все';
+    showMoreNoteIcon.classList.remove('rotated');
   } else {
-    remontText.textContent = 'Скрыть';
-    remontIcon.classList.add('rotated');
+    showMoreNoteText.textContent = 'Скрыть';
+    showMoreNoteIcon.classList.add('rotated');
   }
 });
 
-//ipad
+//swiper wrapper
 
-
-const toggleButtonIpad = document.getElementById('toggle-button-ipad');
-const toggleIconIpad = document.getElementById('toggle-icon-ipad');
-const toggleTextIpad = document.getElementById('toggle-text-ipad');
-const hiddenImagesIpad = document.querySelectorAll('.hidden-ipad');
-
-toggleButtonIpad.addEventListener('click', () => {
-  hiddenImagesIpad.forEach(image => {
-    image.classList.toggle('hidden-ipad');
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper('.image-slider', {
+    slidesPerView: 'auto', 
+    spaceBetween: 20, 
+    loop: true, 
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   });
-
-  const isHiddenIpad = Array.from(hiddenImagesIpad).some(image => image.classList.contains('hidden-ipad'));
-
-  if (isHiddenIpad) {
-    toggleTextIpad.textContent = 'Показать все';
-    toggleIconIpad.classList.remove('rotated');
-  } else {
-    toggleTextIpad.textContent = 'Скрыть';
-    toggleIconIpad.classList.add('rotated');
-  }
 });
 
-const remontButtonIpad = document.getElementById('remont-button__ipad');
-const remontIconIpad = document.getElementById('remont-icon__ipad');
-const remontTextIpad = document.getElementById('remont-text__ipad');
-const remontHiddenIpad = document.querySelectorAll('.remont-hidden__ipad');
+// swiper wrapper remont
 
-remontButtonIpad.addEventListener('click', () => {
-  remontHiddenIpad.forEach(image => {
-    image.classList.toggle('remont-hidden__ipad');
-  });
-
-  const isRemontIpad = Array.from(remontHiddenIpad).some(image => image.classList.contains('remont-hidden__ipad'));
-
-  if (isRemontIpad) {
-    remontTextIpad.textContent = 'Показать все';
-    remontIconIpad.classList.remove('rotated');
-  } else {
-    remontTextIpad.textContent = 'Скрыть';
-    remontIconIpad.classList.add('rotated');
-  }
-});
-
-new Swiper('.image-slider', {
-  slidesPerView: 'auto', 
-  spaceBetween: 20, 
-  loop: true, 
-  pagination: {
-     el: '.swiper-pagination',
-     clickable: true,
-  },
-})
 new Swiper('.image-slider__remont', {
   slidesPerView: 'auto', 
   spaceBetween: 20, 
@@ -166,133 +80,79 @@ new Swiper('.image-slider__remont', {
      el: '.swiper-pagination',
      clickable: true,
   },
-
-
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 20,
-    pagination: {
+// swiper wrapper coust
+
+new Swiper(".swiper", {
+  slidesPerView: "auto", 
+  spaceBetween: 20,  
+  loop: false,    
+  pagination: {
       el: ".swiper-pagination",
       clickable: true,
-    },
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const burgerButtons = document.querySelectorAll(".burgerButton"); 
-  const sidebarModal = document.querySelector(".sidebar-modal"); 
-  const rejectIcon = document.querySelector(".sidebar-close"); 
-
-  if (!burgerButtons.length || !sidebarModal || !rejectIcon) {
-      console.error("Ошибка: Один из элементов не найден!");
-      return;
-  }
-
-  // open window
-  burgerButtons.forEach(button => {
-      button.addEventListener("click", (event) => {
-          event.preventDefault();
-          sidebarModal.classList.toggle("sidebar-modal--active");
-          event.stopPropagation();
-      });
-  });
-
-//close window
-
-  rejectIcon.addEventListener("click", () => {
-      sidebarModal.classList.remove("sidebar-modal--active");
-  });
-
-
-  document.addEventListener("click", (event) => {
-      if (!sidebarModal.contains(event.target) && !event.target.closest(".burgerButton")) {
-          sidebarModal.classList.remove("sidebar-modal--active");
-      }
-  });
-
-
-  sidebarModal.addEventListener("click", (event) => {
-      event.stopPropagation();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const callIcon = document.querySelector("#callIcon");
-  const callIconModal = document.querySelector("#callIconModal");
-  const orderCall = document.querySelector(".order-call");
-  const rejectIcon = document.querySelector(".call-close");
-  const sendButton = document.querySelector(".order-call__send");
-
-  if (orderCall && rejectIcon) {
-    function toggleCall() {
-      orderCall.classList.toggle("order-call--active");
-    }
-
-    function closeCall() {
-      orderCall.classList.remove("order-call--active");
-    }
-
-    if (callIcon) callIcon.addEventListener("click", toggleCall);
-    if (callIconModal) callIconModal.addEventListener("click", toggleCall);
-    rejectIcon.addEventListener("click", closeCall);
-    sendButton.addEventListener("click", () => {
-      console.log("Данные отправлены!");
-      closeCall();
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!event.target.closest(".order-call") && 
-          !event.target.closest("#callIcon") && 
-          !event.target.closest("#callIconModal")) {
-        closeCall();
-      }
-    });
-  } else {
-    console.error("Ошибка: Не найдены элементы для Call!");
-  }
-
-  //call chat call-phone chat-phone
-
-  const chatIcon = document.querySelector("#chatIcon");
-  const chatIconModal = document.querySelector("#chatIconModal");
-  const chatWindow = document.querySelector(".chat");
-  const chatCloseIcon = document.querySelector(".chat-close");
-  const chatSendButton = document.querySelector(".chat-send");
-
-  if (chatWindow && chatCloseIcon) {
-    function toggleChat() {
-      chatWindow.classList.toggle("chat--active");
-    }
-
-    function closeChat() {
-      chatWindow.classList.remove("chat--active");
-    }
-
-    if (chatIcon) chatIcon.addEventListener("click", toggleChat);
-    if (chatIconModal) chatIconModal.addEventListener("click", toggleChat);
-    chatCloseIcon.addEventListener("click", closeChat);
-    chatSendButton.addEventListener("click", () => {
-      console.log("Сообщение отправлено!");
-      closeChat();
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!event.target.closest(".chat") &&
-          !event.target.closest("#chatIcon") &&
-          !event.target.closest("#chatIconModal")) {
-        closeChat();
-      }
-    });
-  } else {
-    console.error("Ошибка: Не найдены элементы для Chat!");
   }
 });
 
 
+  // buttons sidebar menu
+
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    sidebar.classList.toggle("active");
 
 
+    if (sidebar.classList.contains("active")) {
+        mainContent.classList.add("blur");
+    } else {
+        mainContent.classList.remove("blur");
+    }
+}
+
+//call menu
+
+function togglePopup() {
+    document.getElementById("phone-info").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+}
+
+
+document.querySelectorAll(".callIcon").forEach(button => {
+    button.addEventListener("click", togglePopup);
+});
+
+document.querySelector(".call-close").addEventListener("click", togglePopup);
+
+document.getElementById("overlay").addEventListener("click", togglePopup);
+
+// chat
+function togglePopup() {
+  document.getElementById("contact-info").classList.toggle("active");
+  document.getElementById("overlay-chat").classList.toggle("active");
+}
+
+document.querySelectorAll(".contactIcon").forEach(button => {
+  button.addEventListener("click", togglePopup);
+});
+
+document.querySelectorAll(".chat-close, .chat-close-overlay").forEach(button => {
+  button.addEventListener("click", togglePopup);
+});
+
+document.getElementById("overlay-chat").addEventListener("click", togglePopup);
+
+//function toggleMenu() {
+// document.getElementById("sidebar").classList.toggle("active");
+//}
+
+//function togglePhoneInfo() {
+ ///   let phonePopup = document.getElementById("phone-info");
+ //   phonePopup.style.display = (phonePopup.style.display === "block") ? "none" : "block";
+//}
+
+//function toggleContactInfo() {
+ //   let contactPopup = document.getElementById("contact-info");
+  //  contactPopup.style.display = (contactPopup.style.display === "block") ? "none" : "block";
+//}
