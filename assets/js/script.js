@@ -142,17 +142,3 @@ document.querySelectorAll(".chat-close, .chat-close-overlay").forEach(button => 
 });
 
 document.getElementById("overlay-chat").addEventListener("click", togglePopup);
-
-//function toggleMenu() {
-// document.getElementById("sidebar").classList.toggle("active");
-//}
-
-//function togglePhoneInfo() {
- ///   let phonePopup = document.getElementById("phone-info");
- //   phonePopup.style.display = (phonePopup.style.display === "block") ? "none" : "block";
-//}
-
-//function toggleContactInfo() {
- //   let contactPopup = document.getElementById("contact-info");
-  //  contactPopup.style.display = (contactPopup.style.display === "block") ? "none" : "block";
-//}
