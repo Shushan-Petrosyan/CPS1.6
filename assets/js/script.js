@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(".read-more");
-    const extraText = document.querySelector(".extra-text");
-    
-    button.addEventListener("click", () => {
-        extraText.classList.toggle("hidden");
-        button.classList.toggle("active");
-        button.querySelector(".button-text").textContent = 
-            extraText.classList.contains("hidden") ? "Читать далее" : "Скрыть";
-    });
+  const button = document.querySelector(".read-more");
+  const extraText = document.querySelector(".extra-text");
+  
+  button.addEventListener("click", () => {
+      extraText.classList.toggle("hidden");
+      button.classList.toggle("active");
+      button.querySelector(".button-text").textContent = 
+          extraText.classList.contains("hidden") ? "Читать далее" : "Скрыть";
+  });
 });
 
 // show more lenovo
@@ -18,19 +18,19 @@ const showMoreText = document.querySelector('.show-more__text');
 const hiddenImages = document.querySelectorAll('.hidden-slider');
 
 showMoreButton.addEventListener('click', () => {
-  hiddenImages.forEach(image => {
-    image.classList.toggle('hidden-slider');
-  });
+hiddenImages.forEach(image => {
+  image.classList.toggle('hidden-slider');
+});
 
-  const isHidden = Array.from(hiddenImages).some(image => image.classList.contains('hidden-slider'));
+const isHidden = Array.from(hiddenImages).some(image => image.classList.contains('hidden-slider'));
 
-  if (isHidden) {
-    showMoreText.textContent = 'Показать все';
-    showMoreIcon.classList.remove('rotated');
-  } else {
-    showMoreText.textContent = 'Скрыть';
-    showMoreIcon.classList.add('rotated');
-  }
+if (isHidden) {
+  showMoreText.textContent = 'Показать все';
+  showMoreIcon.classList.remove('rotated');
+} else {
+  showMoreText.textContent = 'Скрыть';
+  showMoreIcon.classList.add('rotated');
+}
 });
 
 // show more notes
@@ -41,104 +41,132 @@ const showMoreNoteText = document.querySelector('.show-more-note_text');
 const hiddenNoteImages = document.querySelectorAll('.slider-note__hidden');
 
 showMoreNoteButton.addEventListener('click', () => {
-    hiddenNoteImages.forEach(image => {
-    image.classList.toggle('slider-note__hidden');
-  });
+  hiddenNoteImages.forEach(image => {
+  image.classList.toggle('slider-note__hidden');
+});
 
-  const isHiddenNote = Array.from(hiddenNoteImages).some(image => image.classList.contains('slider-note__hidden'));
+const isHiddenNote = Array.from(hiddenNoteImages).some(image => image.classList.contains('slider-note__hidden'));
 
-  if (isHiddenNote) {
-    showMoreNoteText.textContent = 'Показать все';
-    showMoreNoteIcon.classList.remove('rotated');
-  } else {
-    showMoreNoteText.textContent = 'Скрыть';
-    showMoreNoteIcon.classList.add('rotated');
-  }
+if (isHiddenNote) {
+  showMoreNoteText.textContent = 'Показать все';
+  showMoreNoteIcon.classList.remove('rotated');
+} else {
+  showMoreNoteText.textContent = 'Скрыть';
+  showMoreNoteIcon.classList.add('rotated');
+}
 });
 
 //swiper wrapper
 
 document.addEventListener("DOMContentLoaded", function () {
-  new Swiper('.image-slider', {
-    slidesPerView: 'auto', 
-    spaceBetween: 20, 
-    loop: true, 
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
+new Swiper('.image-slider', {
+  slidesPerView: 'auto', 
+  spaceBetween: 20, 
+  loop: true, 
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 });
 
 // swiper wrapper remont
 
 new Swiper('.image-slider__remont', {
-  slidesPerView: 'auto', 
-  spaceBetween: 20, 
-  loop: true, 
-  pagination: {
-     el: '.swiper-pagination',
-     clickable: true,
-  },
+slidesPerView: 'auto', 
+spaceBetween: 20, 
+loop: true, 
+pagination: {
+   el: '.swiper-pagination',
+   clickable: true,
+},
 });
 
 // swiper wrapper coust
 
 new Swiper(".swiper", {
-  slidesPerView: "auto", 
-  spaceBetween: 20,  
-  loop: false,    
-  pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-  }
+slidesPerView: "auto", 
+spaceBetween: 20,  
+loop: false,    
+pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+}
 });
 
 
-  // buttons sidebar menu
+// buttons sidebar menu
 
-  function toggleMenu() {
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("mainContent");
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const mainContent = document.getElementById("mainContent");
 
-    sidebar.classList.toggle("active");
+  sidebar.classList.toggle("active");
 
-
-    if (sidebar.classList.contains("active")) {
-        mainContent.classList.add("blur");
-    } else {
-        mainContent.classList.remove("blur");
-    }
+  if (sidebar.classList.contains("active")) {
+      mainContent.classList.add("blur");
+      document.addEventListener("click", closeMenuOutside);
+  } else {
+      mainContent.classList.remove("blur");
+      document.removeEventListener("click", closeMenuOutside);
+  }
 }
+
+function closeMenuOutside(event) {
+  const sidebar = document.getElementById("sidebar");
+  const burgerButton = document.querySelector(".burgerButton");
+
+  if (!sidebar.contains(event.target) && !burgerButton.contains(event.target)) {
+    toggleMenu();
+  }
+}
+
 
 //call menu
 
-function togglePopup() {
-    document.getElementById("phone-info").classList.toggle("active");
-    document.getElementById("overlay").classList.toggle("active");
+function toggleCall() {
+  document.getElementById("phone-info").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
 }
 
 
 document.querySelectorAll(".callIcon").forEach(button => {
-    button.addEventListener("click", togglePopup);
+  button.addEventListener("click", toggleCall);
 });
 
-document.querySelector(".call-close").addEventListener("click", togglePopup);
+document.querySelector(".call-close").addEventListener("click", toggleCall);
 
-document.getElementById("overlay").addEventListener("click", togglePopup);
+document.getElementById("overlay").addEventListener("click", toggleCall);
 
 // chat
 function togglePopup() {
-  document.getElementById("contact-info").classList.toggle("active");
-  document.getElementById("overlay-chat").classList.toggle("active");
+document.getElementById("contact-info").classList.toggle("active");
+document.getElementById("overlay-chat").classList.toggle("active");
 }
 
 document.querySelectorAll(".contactIcon").forEach(button => {
-  button.addEventListener("click", togglePopup);
+button.addEventListener("click", togglePopup);
 });
 
 document.querySelectorAll(".chat-close, .chat-close-overlay").forEach(button => {
-  button.addEventListener("click", togglePopup);
+button.addEventListener("click", togglePopup);
 });
 
 document.getElementById("overlay-chat").addEventListener("click", togglePopup);
+
+
+// function toggleMenu() {
+//   alert('ayk')
+//   document.getElementById("sidebar").classList.toggle("active");
+// }
+
+// function togglePhoneInfo() {
+//   alert('bel')
+//   let phonePopup = document.getElementById("phone-info");
+//   phonePopup.style.display = (phonePopup.style.display === "block") ? "none" : "block";
+// }
+
+// function toggleContactInfo() {
+//   let contactPopup = document.getElementById("contact-info");
+//   contactPopup.style.display = (contactPopup.style.display === "block") ? "none" : "block";
+// }

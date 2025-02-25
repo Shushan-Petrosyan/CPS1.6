@@ -1,4 +1,4 @@
-$font-family: "Old Standard TT", serif;
+$font-family:"Arial, Helvetica, sans-serif";
 $primary-color: #1B1C21;
 $hover-color: #7E7E82;
 $highlight-color: #41F6D7;
@@ -88,11 +88,15 @@ body {
   transition: left 0.3s ease-in-out;
   padding-left: 20px;
   padding-top: 4px;
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
 
 .sidebar.active {
   left: 0;
@@ -100,8 +104,8 @@ body {
 
 .menu-icon__sidebar {
   display: flex;
-  justify-content: space-between;
-
+  gap: 30%;
+  width: 200px;
 }
 
 .sidebar ul {
@@ -123,10 +127,7 @@ body {
 
 .icons {
   display: flex;
-  justify-content: flex-start;
-  align-items: center; 
-  gap: 20px;
-  width: 200px;
+  width: 150px;
 }
 
 .icon {
@@ -222,7 +223,7 @@ color: #1B1C21;
  flex-wrap: wrap;
  gap: 20px;
 margin-left: 23%;
- margin-top: 5%;
+margin-top: 1%;
 }
 
 .nav-item {
@@ -265,6 +266,7 @@ margin-left: 23%;
   width: 500px;
   height: 300px;
   border-radius: 8px;
+  margin-top: 3%;
 }
 
 .hidden {
@@ -424,8 +426,7 @@ margin-left: 23%;
 }
 
 .order-table td {
-  font-family: $font-family;
-  font-weight: bold;
+  font-family: $font-family;;
   color: #1B1C21;
   font-size: 14px;
 }
@@ -490,67 +491,6 @@ margin-left: 23%;
   margin-top: 40px;
 }
 
-
-@media screen and (max-width:1120px) {
-
-  .navigation-Desktop {
-    display: none;
-  }
-
-.menu-icon {
-  display: none;
-}
-
-.top-actions {
-  display: none;
-}
-
-.repair-img-phone {
-  display: none;
-}
-
-.checkstatus-img-phone {
-  display: none;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: white;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%); 
-}
-
-.sidebar.active {
-  transform: translateX(0); 
-}
-
-#closeSidebar {
-  display: flex;
-  cursor: pointer;
-
-  width: 40px;
-  height: 40px;
-  order: -1;
-}
-
-#mainContent {
-  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.blur {
-  filter: blur(8px);
-  opacity: 0.5;
-  pointer-events: none; 
-}
-
-// call window
-
-
 .overlay {
   display: none;
   position: fixed;
@@ -586,7 +526,7 @@ margin-left: 23%;
 
 .order-call.active {
   right: 0;
-  visibility: hidden;
+  visibility: visible;
 }
 
 .order-call__text {
@@ -655,6 +595,7 @@ input[type="tel"] {
   background: #e0275c;
 }
 
+
 //chat
 
 
@@ -665,8 +606,9 @@ input[type="tel"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(248, 245, 245, 0.5);
   backdrop-filter: blur(5px); 
+  
 }
 
 .overlay-chat.active {
@@ -752,7 +694,309 @@ input[type="email"] {
   color: #333;
 }
 
+.chat-close-overlay {
+  display: none;
+}
 
+.chat-text {
+  font-size: 12px;
+  color: #1B1C21;
+}
+
+.chat-text .highlight {
+  color: #ff2f69; 
+
+}
+
+
+.chat-send {
+  width: 150px;
+  padding: 12px;
+  background: #ff2f69; 
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+  margin: 20px auto 0; 
+  display: block; 
+}
+
+.chat-send:hover {
+  background: #e0275c;
+}
+
+@media screen and (max-width:1120px) {
+
+  .navigation-Desktop {
+    display: none;
+  }
+
+.menu-icon {
+  display: none;
+}
+
+.top-actions {
+  display: none;
+}
+
+.repair-img-phone {
+  display: none;
+}
+
+.checkstatus-img-phone {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); 
+}
+
+.sidebar.active {
+  transform: translateX(0); 
+}
+
+.menu-icon__sidebar {
+margin-top: 20px;
+}
+
+#closeSidebar {
+  display: flex;
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+  order: -1;
+}
+
+#mainContent {
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.blur {
+  filter: blur(8px);
+  opacity: 0.5;
+  pointer-events: none; 
+}
+
+// call window
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); 
+  z-index: 999;
+}
+
+
+.overlay.active {
+  display: block;
+}
+
+.order-call {
+  position: fixed;
+  right: -100%; 
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.order-call.active {
+  right: 0;
+  visibility: visible;
+}
+
+.order-call__text {
+  font-size: 12px;
+  color: #1B1C21;
+}
+
+.order-call__text .highlight {
+  color: #ff2f69; 
+
+}
+
+.phone-height {
+  height: 400px;
+}
+
+.order-call__title {
+  font-family: $font-family;
+  font-size: 24px;
+  color: #1B1C21;
+  border-left: 2px solid $highlight-color;
+  padding-left: 10px;
+}
+
+.order-call-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+
+.call-close {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+input[type="tel"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+
+.order-call__send {
+  width: 150px;
+  padding: 12px;
+  background: #ff2f69; 
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+  margin: 20px auto 0; 
+  display: block; 
+}
+
+.order-call__send:hover {
+  background: #e0275c;
+}
+
+//chat
+
+
+.overlay-chat {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(248, 245, 245, 0.5);
+  backdrop-filter: blur(5px); 
+  
+}
+
+.overlay-chat.active {
+  display: block; 
+}
+
+
+.contact-popup {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.contact-popup.active {
+  right: 0; 
+  visibility: visible;
+}
+
+
+.contact-popup__text {
+  font-size: 12px;
+  color: #1B1C21;
+}
+
+
+.chat__title {
+  font-size: 24px;
+  color: #1B1C21;
+}
+
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.chat-head img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+input[type="text"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+input[type="tel"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+input[type="email"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.chat-close-overlay {
+  display: none;
+}
 
 .chat-text {
   font-size: 12px;
@@ -829,7 +1073,7 @@ input[type="email"] {
   .title {
     display: block;
     color: #1B1C21;
-    font-size: 28px;
+    font-size: 24px;
     font-family: $font-family;
     padding-left: 3%;
     border-left: 3px solid $highlight-color;
