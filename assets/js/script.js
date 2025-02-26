@@ -153,20 +153,3 @@ button.addEventListener("click", togglePopup);
 });
 
 document.getElementById("overlay-chat").addEventListener("click", togglePopup);
-
-
-// function toggleMenu() {
-//   alert('ayk')
-//   document.getElementById("sidebar").classList.toggle("active");
-// }
-
-// function togglePhoneInfo() {
-//   alert('bel')
-//   let phonePopup = document.getElementById("phone-info");
-//   phonePopup.style.display = (phonePopup.style.display === "block") ? "none" : "block";
-// }
-
-// function toggleContactInfo() {
-//   let contactPopup = document.getElementById("contact-info");
-//   contactPopup.style.display = (contactPopup.style.display === "block") ? "none" : "block";
-// }

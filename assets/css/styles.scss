@@ -544,6 +544,10 @@ margin-top: 1%;
 }
 
 .order-call__title {
+  position: absolute;
+left: 5px;
+top: 60px;
+  display: block;
   font-family: $font-family;
   font-size: 24px;
   color: #1B1C21;
@@ -553,8 +557,9 @@ margin-top: 1%;
 
 .order-call-head {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -563,6 +568,7 @@ margin-top: 1%;
   width: 40px;
   height: 40px;
   cursor: pointer;
+  padding-bottom: 50px;
 }
 
 input[type="tel"] {
@@ -577,13 +583,14 @@ input[type="tel"] {
 
 
 .order-call__send {
-  width: 150px;
+  width: 136px;
+  height: 32px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   text-align: center;
   transition: background 0.3s ease;
@@ -664,9 +671,19 @@ input[type="tel"] {
   cursor: pointer;
 }
 
+#message {
+  height: 118px;
+  width: 310px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 
 input[type="text"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -677,6 +694,7 @@ input[type="text"] {
 
 input[type="tel"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -687,6 +705,7 @@ input[type="tel"] {
 
 input[type="email"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -710,13 +729,14 @@ input[type="email"] {
 
 
 .chat-send {
-  width: 150px;
+  width: 132px;
+  height: 50px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
   text-align: center;
   transition: background 0.3s ease;
@@ -850,6 +870,7 @@ margin-top: 20px;
   color: #1B1C21;
   border-left: 2px solid $highlight-color;
   padding-left: 10px;
+  margin-left: 2px;
 }
 
 .order-call-head {
@@ -878,13 +899,14 @@ input[type="tel"] {
 
 
 .order-call__send {
-  width: 150px;
+  width: 132px;
+  height: 50px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
   text-align: center;
   transition: background 0.3s ease;
@@ -967,6 +989,7 @@ input[type="tel"] {
 
 input[type="text"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -977,6 +1000,7 @@ input[type="text"] {
 
 input[type="tel"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -987,11 +1011,16 @@ input[type="tel"] {
 
 input[type="email"] {
   padding: 12px;
+  width: 300px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
   color: #333;
+}
+
+#message {
+  font-size: 16px;
 }
 
 .chat-close-overlay {
@@ -1010,13 +1039,14 @@ input[type="email"] {
 
 
 .chat-send {
-  width: 150px;
+  width: 132px;
+  height: 50px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   text-align: center;
   transition: background 0.3s ease;
@@ -1451,43 +1481,48 @@ input[type="email"] {
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 260px;
-  margin-left: 3%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 260px;
+    font-family: Arial, sans-serif;
+    margin-left: 3%;
+  }
+
+  .service-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 5px;
+  }
+
+  .service-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .service-info {
+    margin-bottom: 10px;
+  }
+
+  .service-label {
+    font-size: 12px;
+    color: $hover-color;
+  }
+
+.button-flex {
+  display: flex;
+  gap: 20px;
 }
 
-.service-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #999;
-}
-
-.service-description {
-  font-size: 14px;
-  color: #333;
-  margin: 10px 0;
-}
-
-.service-label {
-  font-size: 12px;
-  color: #888;
-  margin-top: 8px;
-}
-
-.service-price {
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
-}
+  .service-price, .service-duration {
+    font-size: 14px;
+  }
 
 .service-duration {
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
+  padding-top: 10px;
 }
 
 .service-button {
@@ -1550,6 +1585,60 @@ bottom: 20px;
   align-items: center; 
   text-align: center; 
   margin: 0 auto; 
+
+.text-end {
+  height:0;
+}
+
+
+}
+
+.order-call {
+  width: 300px;
+}
+
+.order-call.active {
+  right: 0;
+  visibility: visible;
+}
+
+//chat
+
+.contact-popup {
+  width: 300px;
+}
+
+
+input[type="text"] {
+  padding: 12px;
+  width: 250px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+input[type="tel"] {
+  padding: 12px;
+  width: 250px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+input[type="email"] {
+  padding: 12px;
+  width: 250px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
 }
 
 }
