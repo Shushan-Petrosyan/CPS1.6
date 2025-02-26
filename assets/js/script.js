@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".read-more");
   const extraText = document.querySelector(".extra-text");
-  
+
   button.addEventListener("click", () => {
       extraText.classList.toggle("hidden");
       button.classList.toggle("active");
-      button.querySelector(".button-text").textContent = 
+      button.querySelector(".button-text").textContent =
           extraText.classList.contains("hidden") ? "Читать далее" : "Скрыть";
   });
 });
 
 // show more lenovo
 
-const showMoreButton = document.querySelector('.show-more'); 
+const showMoreButton = document.querySelector('.show-more');
 const showMoreIcon = document.querySelector('.show-more__icon');
 const showMoreText = document.querySelector('.show-more__text');
 const hiddenImages = document.querySelectorAll('.hidden-slider');
@@ -35,7 +35,7 @@ if (isHidden) {
 
 // show more notes
 
-const showMoreNoteButton = document.querySelector('.show-more-note'); 
+const showMoreNoteButton = document.querySelector('.show-more-note');
 const showMoreNoteIcon = document.querySelector('.show-more-note_icon');
 const showMoreNoteText = document.querySelector('.show-more-note_text');
 const hiddenNoteImages = document.querySelectorAll('.slider-note__hidden');
@@ -60,9 +60,9 @@ if (isHiddenNote) {
 
 document.addEventListener("DOMContentLoaded", function () {
 new Swiper('.image-slider', {
-  slidesPerView: 'auto', 
-  spaceBetween: 20, 
-  loop: true, 
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -73,9 +73,9 @@ new Swiper('.image-slider', {
 // swiper wrapper remont
 
 new Swiper('.image-slider__remont', {
-slidesPerView: 'auto', 
-spaceBetween: 20, 
-loop: true, 
+slidesPerView: 'auto',
+spaceBetween: 20,
+loop: true,
 pagination: {
    el: '.swiper-pagination',
    clickable: true,
@@ -85,9 +85,9 @@ pagination: {
 // swiper wrapper coust
 
 new Swiper(".swiper", {
-slidesPerView: "auto", 
-spaceBetween: 20,  
-loop: false,    
+slidesPerView: "auto",
+spaceBetween: 20,
+loop: false,
 pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -105,19 +105,13 @@ function toggleMenu() {
 
   if (sidebar.classList.contains("active")) {
       mainContent.classList.add("blur");
-      document.addEventListener("click", closeMenuOutside);
+      document.getElementById('sidebar').classList.add('active')
+      // document.addEventListener("click", closeMenuOutside);
   } else {
-      mainContent.classList.remove("blur");
+      // mainContent.classList.remove("blur");
+      document.getElementById('sidebar').classList.remove('active')
+      document.getElementById('mainContent').classList.remove('blur')
       document.removeEventListener("click", closeMenuOutside);
-  }
-}
-
-function closeMenuOutside(event) {
-  const sidebar = document.getElementById("sidebar");
-  const burgerButton = document.querySelector(".burgerButton");
-
-  if (!sidebar.contains(event.target) && !burgerButton.contains(event.target)) {
-    toggleMenu();
   }
 }
 
@@ -127,6 +121,8 @@ function closeMenuOutside(event) {
 function toggleCall() {
   document.getElementById("phone-info").classList.toggle("active");
   document.getElementById("overlay").classList.toggle("active");
+    document.getElementById('sidebar').classList.remove('active')
+    document.getElementById('mainContent').classList.remove('blur')
 }
 
 
@@ -142,6 +138,9 @@ document.getElementById("overlay").addEventListener("click", toggleCall);
 function togglePopup() {
 document.getElementById("contact-info").classList.toggle("active");
 document.getElementById("overlay-chat").classList.toggle("active");
+    document.getElementById('sidebar').classList.remove('active')
+
+document.getElementById('mainContent').classList.remove('blur')
 }
 
 document.querySelectorAll(".contactIcon").forEach(button => {
