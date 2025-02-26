@@ -1,4 +1,4 @@
-$font-family:"Arial, Helvetica, sans-serif";
+$font-family:"Montserrat', sans-serif";
 $primary-color: #1B1C21;
 $hover-color: #7E7E82;
 $highlight-color: #41F6D7;
@@ -15,6 +15,8 @@ body {
     overflow-x: hidden;
     width: 100%;
     background: linear-gradient(to right, #FFFFFF 20%, #F5F5F5 21%);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400; 
   }
   
   .top-bar {
@@ -29,7 +31,7 @@ body {
   .fa-bars {
     color: #1B1C21;
     font-size: 28px !important;
-    font-family: $font-family;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     padding-left: 25px;
     border-left: 3px solid $highlight-color;
@@ -51,14 +53,14 @@ body {
   border: none; 
   cursor: pointer; 
   font-size: 16px;
-  font-family: inherit; 
+  font-family: 'Montserrat', sans-serif;
   gap: 8px; 
   padding: 10px 15px;
 }
 
 .action-btn i {
   font-size: 16px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
    color:#1B1C21;
 }
 
@@ -142,13 +144,13 @@ body {
 
 .fas {
 font-size: 16px;
-font-family: $font-family;
+font-family: 'Montserrat', sans-serif;
 color: #1B1C21;
 }
 
 .phone {
   font-size: 24px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;;
   color: #1B1C21;
 }
 
@@ -156,12 +158,14 @@ color: #1B1C21;
   display: flex;
   gap: 10px;
   font-size:16px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   color: #1B1C21;
+  cursor: pointer;
 }
 
 .languages p:hover {
   color: #7E7E82;
+  cursor: pointer;
 }
 
 // display none
@@ -239,6 +243,7 @@ margin-top: 1%;
   width: 233px;
   height: 40px;
   font-size: $font-family;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #7E7E82;
 }
@@ -259,12 +264,12 @@ margin-top: 1%;
   width: 490px;
   font-size: 16px;
   color: #1B1C21;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .about-image img {
-  width: 500px;
-  height: 300px;
+  width:100%;
+
   border-radius: 8px;
   margin-top: 3%;
 }
@@ -300,7 +305,7 @@ margin-top: 1%;
 
 .slider h3 {
   font-size: 18px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   color: #7E7E82;
 }
 
@@ -349,7 +354,7 @@ margin-top: 1%;
 
 .slider-notes h3 {
   font-size: 18px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   color: #7E7E82;
 }
 
@@ -401,7 +406,7 @@ margin-top: 1%;
 
 .order h3 {
   font-size: 18px;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   color: #7E7E82; 
 }
 
@@ -426,13 +431,13 @@ margin-top: 1%;
 }
 
 .order-table td {
-  font-family: $font-family;;
+  font-family: 'Montserrat', sans-serif;
   color: #1B1C21;
   font-size: 14px;
 }
 
 .order-table th {
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #7E7E82;
   font-size: 14px;
@@ -479,7 +484,7 @@ margin-top: 1%;
   margin-left: 23%;
   margin-top: 3%;
   display: flex;
-;
+
 }
 
 .text-end {
@@ -499,6 +504,7 @@ margin-top: 1%;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px); 
+  background-color: #fff;
   z-index: 999;
 }
 
@@ -545,10 +551,10 @@ margin-top: 1%;
 
 .order-call__title {
   position: absolute;
-left: 5px;
-top: 60px;
+  left: 20px;
+  top: 60px;
   display: block;
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   color: #1B1C21;
   border-left: 2px solid $highlight-color;
@@ -584,13 +590,13 @@ input[type="tel"] {
 
 .order-call__send {
   width: 136px;
-  height: 32px;
+  height: 40px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   border: none;
-  border-radius: 16px;
+  border-radius: 25px;
   cursor: pointer;
   text-align: center;
   transition: background 0.3s ease;
@@ -613,7 +619,7 @@ input[type="tel"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(248, 245, 245, 0.5);
+  background-color: #fff;
   backdrop-filter: blur(5px); 
   
 }
@@ -729,12 +735,12 @@ input[type="email"] {
 
 
 .chat-send {
-  width: 132px;
-  height: 50px;
+  width: 136px;
+  height: 40px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -820,6 +826,7 @@ margin-top: 20px;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px); 
+  background-color: #fff;
   z-index: 999;
 }
 
@@ -865,7 +872,7 @@ margin-top: 20px;
 }
 
 .order-call__title {
-  font-family: $font-family;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   color: #1B1C21;
   border-left: 2px solid $highlight-color;
@@ -885,6 +892,7 @@ margin-top: 20px;
   width: 40px;
   height: 40px;
   cursor: pointer;
+  margin-left: -300px;
 }
 
 input[type="tel"] {
@@ -899,12 +907,12 @@ input[type="tel"] {
 
 
 .order-call__send {
-  width: 132px;
-  height: 50px;
+  width: 136px;
+  height: 40px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -928,7 +936,7 @@ input[type="tel"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(248, 245, 245, 0.5);
+  background-color: #fff;
   backdrop-filter: blur(5px); 
   
 }
@@ -1039,12 +1047,12 @@ input[type="email"] {
 
 
 .chat-send {
-  width: 132px;
-  height: 50px;
+  width: 136px;
+  height: 40px;
   padding: 12px;
   background: #ff2f69; 
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -1104,7 +1112,7 @@ input[type="email"] {
     display: block;
     color: #1B1C21;
     font-size: 24px;
-    font-family: $font-family;
+    font-family: 'Montserrat', sans-serif;
     padding-left: 3%;
     border-left: 3px solid $highlight-color;
   }
@@ -1125,7 +1133,7 @@ input[type="email"] {
     padding: 10px 20px;
     text-decoration: none;
     color: $hover-color;
-    font-family: "Old Standard TT", serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     border: 2px solid transparent; 
     border-radius: 8px;
@@ -1153,12 +1161,12 @@ input[type="email"] {
       width: 312px;
       font-size: 16px;
       color: #1B1C21;
-      font-family: $font-family;
+      font-family: 'Montserrat', sans-serif;
     }
     
     .about-image img {
-      width: 360px;
-      height: 208px;
+      width: 100%;
+
       border-radius: 8px;
     }
 
@@ -1191,7 +1199,7 @@ input[type="email"] {
       
       .slider-notes h3 {
         font-size: 18px;
-        font-family: $font-family;
+        font-family: 'Montserrat', sans-serif;
         color: #7E7E82;
       }
       
@@ -1300,6 +1308,10 @@ input[type="email"] {
   display: none;
 }
 
+.title {
+  padding-top: 10px;
+}
+
 .group-img {
   border-left: 0;
 }
@@ -1326,16 +1338,15 @@ input[type="email"] {
   }
   
   .about-content {
-    width: 288px;
+    width:100%;
     font-size: 16px;
     color: #1B1C21;
-    font-family: $font-family;
+    font-family: 'Montserrat', sans-serif;
   }
   
   .about-image img {
     margin-top: 3%;
-    width: 320px;
-    height: 176px;
+
     border-radius: 8px;
   }
 
@@ -1398,7 +1409,7 @@ input[type="email"] {
   .image-slider__title {
     display: block;
     font-size: 18px;
-    font-family: $font-family;
+    font-family: 'Montserrat', sans-serif;
     color: #7E7E82; 
     margin-left: 3%;
   }
@@ -1454,7 +1465,7 @@ input[type="email"] {
 .services-slider__title {
   display: block;
    font-size: 18px;
-    font-family: $font-family;
+   font-family: 'Montserrat', sans-serif;
     color: #7E7E82; 
     margin-left: 3%;
 }
@@ -1593,6 +1604,9 @@ bottom: 20px;
 
 }
 
+//call
+
+
 .order-call {
   width: 300px;
 }
@@ -1600,6 +1614,57 @@ bottom: 20px;
 .order-call.active {
   right: 0;
   visibility: visible;
+}
+
+.order-call__text {
+  font-size: 12px;
+  color: #1B1C21;
+}
+
+.order-call__text .highlight {
+  color: #ff2f69; 
+
+}
+
+.phone-height {
+  height: 400px;
+}
+
+.order-call__title {
+margin-left: -5px;
+}
+
+.order-call-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+
+.call-close {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: -270px;
+}
+
+input[type="tel"] {
+  width: 288px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+
+}
+
+
+.order-call__send {
+  width: 136px;
+  height: 40px;
+  font-size: 12px; 
 }
 
 //chat
@@ -1639,6 +1704,15 @@ input[type="email"] {
   border-radius: 5px;
   font-size: 16px;
   color: #333;
+}
+
+#message {
+  width: 265px;
+}
+
+.chat-send {
+  width: 136px;
+  height: 40px;
 }
 
 }
