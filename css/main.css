@@ -234,6 +234,11 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
 }
+
+.modals-content textarea{
+  height: 90px;
+  margin: 25px 0 50px 0;
+}
 .modals-container .modals-content p {
   color: #7e7e82;
   font-size: 14px;
@@ -324,6 +329,7 @@
   overflow-x: scroll;
   scrollbar-width: none;
   display: flex;
+  /* flex-wrap: wrap; */
   gap: 10px;
   white-space: nowrap;
 }
@@ -371,9 +377,9 @@
   .main-content .title-container .bid {
     display: none;
   }
-  .main-content .reviews {
+  /* .main-content .reviews {
     display: none;
-  }
+  } */
 }
 @media screen and (max-width: 768px) {
   .main-content .about {
@@ -392,8 +398,8 @@
   flex-direction: column;
   padding: 42px 34px 22px 34px;
   width: 100%;
-  margin: 0 auto;
-  max-width: 1190px;
+  /* margin: 0 auto; */
+  /* max-width: 1190px; */
 }
 .brands-container .brands,
 .brands-container .components,
@@ -578,9 +584,9 @@
   }
 }
 .services-container {
-  max-width: 1190px;
+  /* max-width: 1190px; */
   padding: 42px 34px 22px 34px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 20px;
 }
 
@@ -719,8 +725,8 @@ footer {
 }
 footer .footer-container {
   width: 100%;
-  margin: 0 auto;
-  max-width: 1190px;
+  /* margin: 0 auto; */
+  /* max-width: 1190px; */
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -811,9 +817,9 @@ button:hover {
 .section .section-text p {
   display: block;
   width: 100%;
-  max-width: 1190px;
+  /* max-width: 1190px; */
   padding: 0 34px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 @media screen and (max-width: 1365px) {
@@ -882,4 +888,10 @@ button:hover {
 
 .rotate{
   rotate: 180deg;
+}
+
+
+.navigation li:hover{
+  padding-left: 10px;
+  border-left: 2px solid #41f6d7;
 }
