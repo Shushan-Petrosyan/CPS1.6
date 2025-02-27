@@ -1,0 +1,93 @@
+@import "./variables.scss";
+
+.modals-container {
+  width: 440px;
+  height: 100vh;
+  position: fixed;
+  right: -512px;
+  top: 0;
+  z-index: 10002;
+  transition: 200ms;
+  .modals-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    background-color: $color-standard;
+    box-shadow: 16px 0px 52px 0px #0e185033;
+    border-left: 0.3px solid #d9fff5;
+    padding: 40px 32px;
+    overflow-y: auto;
+    .title {
+      color: $color-light;
+      position: relative;
+      .title-decoration {
+        position: absolute;
+        left: -34px;
+        width: 3px;
+        bottom: 7px;
+        height: 28px;
+        background-color: $color-border;
+      }
+    }
+    h4 {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid $color-gray;
+      border-radius: 8px;
+    }
+    textarea {
+      height: 118px;
+    }
+    p {
+      color: $color-light;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+#blur-section-modal {
+  display: none;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-standard;
+  opacity: 0.95;
+  z-index: 10001;
+  cursor: pointer;
+}
+
+#close-modal {
+  position: absolute;
+  left: -72px;
+}
+
+@media screen and (max-width: 768px) {
+  .modals-container {
+    position: fixed;
+    width: 100vw;
+    right: -100vw;
+    height: 100vh;
+    transition: 200ms;
+    box-shadow: none;
+    .title {
+      .title-decoration {
+        left: -32px;
+      }
+    }
+  }
+
+  #close-modal {
+    position: relative;
+    left: 0;
+  }
+}

@@ -1,0 +1,120 @@
+@import "./variables.scss";
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 42px 34px 22px 34px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1190px;
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .title {
+      display: flex;
+      position: relative;
+      .title-decoration {
+        position: relative;
+        left: -34px;
+        width: 3px;
+        height: 40px;
+        background-color: $color-border;
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 40px;
+        font-weight: 700;
+      }
+    }
+    .bid {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      .bid-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+  .nav {
+    width: 1200px;
+    position: relative;
+    left: -34px;
+    padding-left: 34px;
+    max-width: calc(100% + 34px);
+    margin-top: 17px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      width: 1px; /* Scrollbar width */
+    }
+    .nav-item,
+    .nav-item-selected {
+      padding: 8px 22px;
+      color: $color-light;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .nav-item-selected {
+      border: 1px solid $color-border;
+      background-color: $color-standard;
+    }
+  }
+  .reviews {
+    margin-left: 24px;
+    margin-top: 15px;
+    color: $color-light;
+    cursor: pointer;
+  }
+  .about {
+    margin-top: 32px;
+    display: flex;
+    gap: 48px;
+    .about-text {
+      width: 50%;
+      color: $color-dark;
+    }
+    img {
+      width: 50%;
+      border-radius: 6px;
+    }
+    .show-more-text {
+      display: none;
+    }
+    #read-more {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .main-content {
+    .title-container {
+      .bid {
+        display: none;
+      }
+    }
+    .reviews {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    .about {
+      flex-direction: column;
+      .about-text {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
