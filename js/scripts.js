@@ -66,9 +66,11 @@ document.getElementById('read-less').style.display = "none";
 showAllBrands.addEventListener("click", () => {
   if (brands.style.height === "100%") {
     brands.style.height = "180px";
+    document.getElementById('brand-rotate').classList.remove('rotate')
     showBrandText.textContent = "Показать все";
   } else {
     brands.style.height = "100%";
+    document.getElementById('brand-rotate').classList.add('rotate')
     showBrandText.textContent = "Скрыть";
   }
 });
@@ -77,8 +79,10 @@ showAllComponents.addEventListener("click", () => {
   if (components.style.height === "100%") {
     components.style.height = "180px";
     showComponentsText.textContent = "Показать все";
+    document.getElementById('service-rotate').classList.remove('rotate')
   } else {
     components.style.height = "100%";
+    document.getElementById('service-rotate').classList.add('rotate')
     showComponentsText.textContent = "Скрыть";
   }
 });

@@ -161,7 +161,6 @@
 @media screen and (max-width: 768px) {
   .menu-container {
     position: fixed;
-    width: 100vw;
     left: -100vw;
     height: 100vh;
     transition: left 0.3s ease;
@@ -561,7 +560,7 @@
   }
   .dots {
     display: flex;
-    gap: 12px;
+    gap: 7px;
     width: min-content;
     margin: 0 auto;
     margin-top: 16px;
@@ -882,4 +881,8 @@ button:hover {
 
 .show-less{
   display: none;
+}
+
+.rotate{
+  rotate: 180deg;
 }
