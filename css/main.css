@@ -234,9 +234,6 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
 }
-.modals-container .modals-content textarea {
-  height: 118px;
-}
 .modals-container .modals-content p {
   color: #7e7e82;
   font-size: 14px;
