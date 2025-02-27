@@ -8,6 +8,7 @@ const modalsContainerPhone = document.querySelector("#modals-container-phone");
 const closeModalButton = document.querySelector("#close-modal");
 const sendMail = document.querySelector(".send-mail");
 const readMore = document.querySelector("#read-more");
+const readLess = document.querySelector("#read-less");
 const showMoreText = document.querySelector(".show-more-text");
 const showAllBrands = document.querySelector("#show-all-brands");
 const brands = document.querySelector(".brands");
@@ -52,7 +53,14 @@ function closeModals() {
 
 readMore.addEventListener("click", () => {
   showMoreText.style.display = "block";
-  readMore.style.display = "none";
+  readMore.style.display = "none"; // Change button text to "Close"
+  document.getElementById('read-less').style.display = "flex";
+});
+
+readLess.addEventListener("click", () => {
+showMoreText.style.display = "none";
+readMore.style.display = "flex"; // Change button text to "Close"
+document.getElementById('read-less').style.display = "none";
 });
 
 showAllBrands.addEventListener("click", () => {
