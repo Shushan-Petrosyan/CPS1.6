@@ -190,7 +190,7 @@
   }
 }
 .modals-container {
-  width: 440px;
+  width: 320px;
   height: 100vh;
   position: fixed;
   right: -512px;
@@ -265,7 +265,7 @@
 @media screen and (max-width: 768px) {
   .modals-container {
     position: fixed;
-    width: 100vw;
+    width: 320px;
     right: -100vw;
     height: 100vh;
     transition: 200ms;
@@ -767,7 +767,7 @@ button:hover {
 .icon-container {
   background-color: #ff3e79;
   width: 40px;
-  height: 40px;
+  min-height: 40px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
