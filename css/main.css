@@ -285,8 +285,15 @@
   padding: 42px 34px 22px 34px;
   width: 100%;
   /* margin: 0 auto; */
-  max-width: 1165px;
+
 }
+
+@media screen and (max-width: 1400px) and (min-width: 1120px) {
+  .main-content {
+    max-width: 1165px;
+  }
+}
+
 .main-content .title-container {
   display: flex;
   align-items: center;
